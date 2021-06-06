@@ -1,8 +1,17 @@
-import URL from 'url';
-import { dirname } from 'path';
+import Logger from './logger.js'
 
-const __filename = URL.fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const logger = new Logger
+
+import { text } from './reference/fs_demo.js'
+
+logger.on('create', data => { 
+    console.log('Successfully created file: ', data) 
+})
+
+text.forEach(data => {
+    logger.log(data)
+})
 
 
-// console.log('App js try')
+
+

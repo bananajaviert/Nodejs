@@ -1,11 +1,51 @@
 import fs from 'fs'
 import path from 'path'
-import URL from 'url';
+import url from 'url'
+import uuid from 'uuid'
 
-
-const __filename = URL.fileURLToPath(import.meta.url);
+const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+
+const text = ['IZONE', 'LOONA', 'ITZY', 'EVERGLOW', 'Cherry Bullet']
+text.forEach(data => {
+        fs.writeFile(
+                path.join(__dirname, '/test', `${data}.txt`), 
+                `Group Name: ${data}\n ID: ${uuid.v4()}`, err => {
+                if(err) throw err
+        })
+})
+
+export { text } // To access array { app.js }
+
+
+// fs.writeFile(path.join(__dirname , '/test', 'hello.txt'), 'Hello world!', err => {
+//     if(err) throw err
+//     console.log('File written!')
+
+//     // Append file
+//     fs.appendFile(path.join(__dirname, '/test', 'hello.txt'), 'Learning Node.js from Traversy Media', err => {
+//         if(err) throw err
+//         console.log('File updated!')
+//     })
+    
+// })
+
+
+
+
+// Create file
+// fs.writeFile(path.join(__dirname, '' , 'event_demo.js'), '', err => {
+//         if(err) throw err
+//         console.log('Url demo file created!')
+// })
+
+// const displayFile = async () => {
+//  await console.log(__filename)
+//  await console.log(__dirname)
+// }
+
+// displayFile()
 
 // Read File
 // Asynchronous Node.js behavior
@@ -17,12 +57,13 @@ const __dirname = path.dirname(__filename);
 // })
 
 // Rename File
-fs.rename(
-        path.join(__dirname, '/test', 'hello.txt'), 
-        path.join(__dirname, '/test', 'rename.txt'), err => {
-        if(err) throw err
-        console.log('File renamed!')
-})
+// fs.rename(
+//         path.join(__dirname, '/test', 'hello.txt'), 
+//         path.join(__dirname, '/test', 'rename.txt'), err => {
+//         if(err) throw err
+//         console.log('File renamed!')
+// })
+
 
 
 
