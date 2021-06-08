@@ -1,12 +1,12 @@
 {
   "name": "first-app",
   "version": "1.0.0",
-  "description": "My first NodeJS Express app",
+  "description": "My first NodeJS app",
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon index"
+    "start": "node app",
+    "dev": "nodemon app"
   },
   "author": "Marco Nabung",
   "license": "ISC",
