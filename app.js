@@ -1,6 +1,6 @@
 import http from 'http'
 import fs from 'fs'
-import path, { basename } from 'path'
+import path from 'path'
 import url from 'url'
 
 const __filename = url.fileURLToPath(import.meta.url)
